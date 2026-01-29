@@ -1,0 +1,360 @@
+/* Reset & Basics */
+:root {
+    --text-primary: #1d1d1f;
+    --text-secondary: #86868b;
+    --bg-color: #ffffff;
+    --bg-light: #f5f5f7;
+    --accent: #2997ff;
+    --border-color: #d2d2d7;
+    --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    background-color: var(--bg-color);
+    line-height: 1.47059;
+    letter-spacing: -0.022em;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+h1 {
+    font-size: 56px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    margin-bottom: 6px;
+}
+
+h2 {
+    font-size: 40px;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.003em;
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+p,
+li {
+    font-size: 19px;
+    color: var(--text-primary);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+/* Layout */
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 22px;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+/* Navigation */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-content {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 22px;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.8);
+    opacity: 0.8;
+}
+
+.nav-links li a:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+    padding: 180px 0 130px;
+    text-align: center;
+    background-color: var(--bg-color);
+}
+
+.subtitle {
+    font-size: 27px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-top: 10px;
+}
+
+.hero-contact {
+    margin-top: 20px;
+    font-size: 17px;
+    color: var(--text-secondary);
+}
+
+.hero-contact a {
+    color: var(--accent);
+}
+
+/* Section Specifics */
+.section-desc {
+    font-size: 24px;
+    line-height: 1.4;
+    font-weight: 400;
+    max-width: 800px;
+}
+
+/* Timeline/Experience */
+.timeline {
+    border-left: 2px solid var(--border-color);
+    padding-left: 40px;
+}
+
+.timeline-item {
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -47px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--text-primary);
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 0 1px var(--border-color);
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+}
+
+.date {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.timeline-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.timeline-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.timeline-list li {
+    font-size: 17px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: #424245;
+}
+
+.timeline-list li::before {
+    content: "•";
+    color: var(--text-secondary);
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+.skill-category h3 {
+    margin-bottom: 20px;
+    font-size: 19px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.simple-list {
+    list-style: none;
+}
+
+.simple-list li {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+/* Contact */
+.contact-card {
+    text-align: center;
+    background: var(--bg-light);
+    padding: 60px;
+    border-radius: 30px;
+}
+
+.contact-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 980px;
+    background-color: #0071e3;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0077ed;
+    color: #fff;
+    transform: scale(1.02);
+}
+
+.button.secondary {
+    background-color: transparent;
+    color: #0071e3;
+    border: 1px solid #0071e3;
+}
+
+.button.secondary:hover {
+    background-color: #0071e3;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    padding: 40px 0;
+    background-color: var(--bg-light);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+footer p {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* Animation Utilities */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .hero {
+        padding: 120px 0 80px;
+    }
+
+    .timeline-header {
+        flex-direction: column;
+    }
+
+    .timeline {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .timeline-item::before {
+        display: none;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+        /* In a real app, we'd add a hamburger menu */
+    }
+
+    .contact-card {
+        padding: 30px 20px;
+    }
+}
